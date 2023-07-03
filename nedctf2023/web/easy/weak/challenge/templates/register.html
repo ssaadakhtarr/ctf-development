@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 style="text-align: center; color: white;">Welcome to Weak!</h1>
+      <br>
+      <div class="wrapper">
+        <div class="title"><span>Signup Form</span></div>
+        {% if error %}
+        <p style="text-align: center;">{{ error }}</p>
+    {% endif %}
+    {% if success %}
+    <p style="text-align: center;">{{ success }}</p>
+    {% endif %}
+        <form method="POST" action="/register">
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <input name="username" type="text" placeholder="Username" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-lock"></i>
+            <input name="password" type="password" placeholder="Password" required>
+          </div>
+          
+          <div class="row button">
+            <input type="submit" value="Register">
+          </div>
+          <div class="signup-link">Already registered? <a href="/login">Login here</a></div>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>

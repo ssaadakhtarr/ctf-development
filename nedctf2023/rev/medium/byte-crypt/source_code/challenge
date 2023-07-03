@@ -1,0 +1,190 @@
+  0           0 RESUME                   0
+
+  1           2 LOAD_CONST               0 (0)
+              4 LOAD_CONST               1 (None)
+              6 IMPORT_NAME              0 (base64)
+              8 STORE_NAME               0 (base64)
+
+  2          10 LOAD_CONST               0 (0)
+             12 LOAD_CONST               1 (None)
+             14 IMPORT_NAME              1 (zlib)
+             16 STORE_NAME               1 (zlib)
+
+  3          18 LOAD_CONST               0 (0)
+             20 LOAD_CONST               1 (None)
+             22 IMPORT_NAME              2 (os)
+             24 STORE_NAME               2 (os)
+
+  5          26 LOAD_CONST               2 ('flag.txt')
+             28 STORE_NAME               3 (flag_file)
+
+  6          30 LOAD_NAME                2 (os)
+             32 LOAD_ATTR                4 (path)
+             42 LOAD_METHOD              5 (exists)
+             64 LOAD_NAME                3 (flag_file)
+             66 PRECALL                  1
+             70 CALL                     1
+             80 POP_JUMP_FORWARD_IF_TRUE    11 (to 104)
+
+  7          82 PUSH_NULL
+             84 LOAD_NAME                6 (FileNotFoundError)
+             86 LOAD_CONST               3 ('Flag file flag.txt not found!')
+             88 PRECALL                  1
+             92 CALL                     1
+            102 RAISE_VARARGS            1
+
+  8     >>  104 PUSH_NULL
+            106 LOAD_NAME                7 (open)
+            108 LOAD_NAME                3 (flag_file)
+            110 LOAD_CONST               4 ('r')
+            112 PRECALL                  2
+            116 CALL                     2
+            126 BEFORE_WITH
+            128 STORE_NAME               8 (file)
+
+  9         130 LOAD_NAME                8 (file)
+            132 LOAD_METHOD              9 (read)
+            154 PRECALL                  0
+            158 CALL                     0
+            168 LOAD_METHOD             10 (strip)
+            190 PRECALL                  0
+            194 CALL                     0
+            204 STORE_NAME              11 (original_flag)
+
+  8         206 LOAD_CONST               1 (None)
+            208 LOAD_CONST               1 (None)
+            210 LOAD_CONST               1 (None)
+            212 PRECALL                  2
+            216 CALL                     2
+            226 POP_TOP
+            228 JUMP_FORWARD            11 (to 252)
+        >>  230 PUSH_EXC_INFO
+            232 WITH_EXCEPT_START
+            234 POP_JUMP_FORWARD_IF_TRUE     4 (to 244)
+            236 RERAISE                  2
+        >>  238 COPY                     3
+            240 POP_EXCEPT
+            242 RERAISE                  1
+        >>  244 POP_TOP
+            246 POP_EXCEPT
+            248 POP_TOP
+            250 POP_TOP
+
+ 11     >>  252 LOAD_CONST               5 (<code object xor_apply at 0x7feec41dfab0, file "encryptor.py", line 11>)
+            254 MAKE_FUNCTION            0
+            256 STORE_NAME              12 (xor_apply)
+
+ 17         258 LOAD_CONST               6 (<code object super_encryption at 0x7feec41479b0, file "encryptor.py", line 17>)
+            260 MAKE_FUNCTION            0
+            262 STORE_NAME              13 (super_encryption)
+
+ 36         264 PUSH_NULL
+            266 LOAD_NAME               13 (super_encryption)
+            268 LOAD_NAME               11 (original_flag)
+            270 PRECALL                  1
+            274 CALL                     1
+            284 STORE_NAME              14 (flag)
+
+ 38         286 PUSH_NULL
+            288 LOAD_NAME               15 (print)
+            290 LOAD_CONST               7 ('Encrypted Flag: ')
+            292 LOAD_NAME               14 (flag)
+            294 FORMAT_VALUE             0
+            296 BUILD_STRING             2
+            298 PRECALL                  1
+            302 CALL                     1
+            312 POP_TOP
+            314 LOAD_CONST               1 (None)
+            316 RETURN_VALUE
+ExceptionTable:
+  128 to 204 -> 230 [1] lasti
+  230 to 236 -> 238 [3] lasti
+  244 to 244 -> 238 [3] lasti
+
+Disassembly of <code object xor_apply at 0x7feec41dfab0, file "encryptor.py", line 11>:
+ 11           0 RESUME                   0
+
+ 12           2 LOAD_CONST               1 ('')
+              4 STORE_FAST               2 (decrypted)
+
+ 13           6 LOAD_GLOBAL              1 (NULL + range)
+             18 LOAD_GLOBAL              3 (NULL + len)
+             30 LOAD_FAST                0 (data)
+             32 PRECALL                  1
+             36 CALL                     1
+             46 PRECALL                  1
+             50 CALL                     1
+             60 GET_ITER
+        >>   62 FOR_ITER                77 (to 218)
+             64 STORE_FAST               3 (i)
+
+ 14          66 LOAD_FAST                2 (decrypted)
+             68 LOAD_GLOBAL              5 (NULL + chr)
+             80 LOAD_GLOBAL              7 (NULL + ord)
+             92 LOAD_FAST                0 (data)
+             94 LOAD_FAST                3 (i)
+             96 BINARY_SUBSCR
+            106 PRECALL                  1
+            110 CALL                     1
+            120 LOAD_GLOBAL              7 (NULL + ord)
+            132 LOAD_FAST                1 (key)
+            134 LOAD_FAST                3 (i)
+            136 LOAD_GLOBAL              3 (NULL + len)
+            148 LOAD_FAST                1 (key)
+            150 PRECALL                  1
+            154 CALL                     1
+            164 BINARY_OP                6 (%)
+            168 BINARY_SUBSCR
+            178 PRECALL                  1
+            182 CALL                     1
+            192 BINARY_OP               12 (^)
+            196 PRECALL                  1
+            200 CALL                     1
+            210 BINARY_OP               13 (+=)
+            214 STORE_FAST               2 (decrypted)
+            216 JUMP_BACKWARD           78 (to 62)
+
+ 15     >>  218 LOAD_FAST                2 (decrypted)
+            220 RETURN_VALUE
+
+Disassembly of <code object super_encryption at 0x7feec41479b0, file "encryptor.py", line 17>:
+ 17           0 RESUME                   0
+
+ 20           2 LOAD_CONST               1 ('CUwRn048*r$gUuE')
+              4 STORE_FAST               1 (key)
+
+ 21           6 LOAD_GLOBAL              1 (NULL + xor_apply)
+             18 LOAD_FAST                0 (encrypted_flag)
+             20 LOAD_FAST                1 (key)
+             22 PRECALL                  2
+             26 CALL                     2
+             36 STORE_FAST               2 (xored_data)
+
+ 24          38 LOAD_FAST                2 (xored_data)
+             40 LOAD_CONST               0 (None)
+             42 LOAD_CONST               0 (None)
+             44 LOAD_CONST               2 (-1)
+             46 BUILD_SLICE              3
+             48 BINARY_SUBSCR
+             58 STORE_FAST               3 (reversed_data)
+
+ 27          60 LOAD_GLOBAL              3 (NULL + zlib)
+             72 LOAD_ATTR                2 (compress)
+             82 LOAD_GLOBAL              7 (NULL + bytes)
+             94 LOAD_FAST                3 (reversed_data)
+             96 LOAD_CONST               3 ('utf-8')
+             98 PRECALL                  2
+            102 CALL                     2
+            112 PRECALL                  1
+            116 CALL                     1
+            126 STORE_FAST               4 (compressed_data)
+
+ 30         128 LOAD_GLOBAL              9 (NULL + base64)
+            140 LOAD_ATTR                5 (b64encode)
+            150 LOAD_FAST                4 (compressed_data)
+            152 PRECALL                  1
+            156 CALL                     1
+            166 STORE_FAST               5 (encoded_flag)
+
+ 32         168 LOAD_FAST                5 (encoded_flag)
+            170 RETURN_VALUE

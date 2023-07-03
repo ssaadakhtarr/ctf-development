@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body>
+    
+    {% if username == "admin" %}
+
+    <iframe id="profile-picture-iframe" src="{{ profile_picture }}" style="width: 100%;
+        height: 400px;" align="center"></iframe>
+      <h1 style="text-align: center; color: white;">Welcome, {{ username }}!</h1>
+      {% if profile_picture %}
+        
+      {% else %}
+        <p>No profile picture set.</p>
+      {% endif %}
+      <br>
+      </form>
+
+      <div style="margin: 0 5% 0 5%">
+        <div class="wrapper">
+          <div class="title"><span>Change Profile Photo</span></div>
+                <form method="POST" action="/set_profile_picture">
+            <div class="row">
+              <label for="profile_picture_url">Enter URL for profile picture:</label>
+         <input type="url" id="profile_picture_url" name="profile_picture_url" required>
+        
+            </div>
+            <br>
+            <div class="row button">
+              <input type="submit" value="Set Profile Picture">
+            </div>
+        
+           
+          </form>
+        </div>
+      </div>
+    {% else %}
+    <h1 style="text-align: center; color: white;">Welcome, {{ username }}!</h1>
+      <p style="text-align:center; color: white;">You don't have permission to access the profile photo feature.</p>
+    {% endif %}
+    <br>
+
+    
+
+    <form method="POST" action="/logout">
+      <input class="logout-button" type="submit" value="Log out">
+    </form>
+
+    <br>
+  </body>
+</html>
