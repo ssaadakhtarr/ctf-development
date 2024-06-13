@@ -12,6 +12,10 @@ Difficulty: <font color='yellow'>Not too easy</font>
 
 <br><br>
 
+## Credits
+
+I made this challenge after playing [this](https://github.com/UofTCTF/uoftctf-2024-chals-public/tree/master/Web/No%20Code) and tweaking a bit of functionality and UI. Also I made it a bit easier by removing some important filters so original idea and credit goes to this challenge's author. 
+
 ## Description
 
 - In this challenge, the participants need to analyze the functionality of the web app. They first need to exploit the JWT weak signing key to inject `SSTI` in the JWT cookie. Finally, they need to bypass some basic `SSTI` filtering to get code execution on the server.

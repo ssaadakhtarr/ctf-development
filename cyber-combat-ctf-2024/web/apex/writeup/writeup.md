@@ -12,6 +12,10 @@ Difficulty: <font color='green'>Easy</font>
 
 <br><br>
 
+## Credits
+
+I made this challenge after playing [this](https://github.com/UofTCTF/uoftctf-2024-chals-public/tree/master/Web/No%20Code) and tweaking a bit of functionality and UI so original idea and credit goes to this challenge's author. 
+
 ## Description
 
 - In this challenge, the participants need to find a vulnerability in the regular expression being used to filter out the input. By inserting a newline character, the participants can bypass the regex and gain code execution on the server due to the usage of `eval`.
