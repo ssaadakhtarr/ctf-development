@@ -1,0 +1,15 @@
+Welcome to the Script Kiddie 2 challenge! This challenge in continuation of the previous Script Kiddie challenge and is designed to test your skills in pattern recognition and scripting. You will encounter various encrypted strings buried within this text. Your task is to decipher these strings to uncover the hidden flag. 
+
+The flag is hidden among the gibberish and lengthy sentences below. Keep an eye out for patterns and use your scripting prowess to crack the code!
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce feugiat leo non ex gravida, vitae elementum nunc sagittis. Maecenas bibendum orci quis aliquet placerat. Nullam efficitur ex sed sapien porttitor, eget ultricies libero efficitur. Vivamus in elit eget est consectetur tempor a in dolor. Ut consequat, nulla eget varius eleifend, elit urna sollicitudin sem, sed finibus nunc ligula at dui. Cras sit amet fermentum dui. Sed laoreet augue et malesuada vehicula. Nam convallis magna eget risus rutrum, in fringilla est sagittis. Sed hendrerit velit et sollicitudin commodo. 
+
+Integer non ultricies lorem. Sed ut lacus aliquet, tincidunt sem eget, gravida ipsum. Nunc auctor enim et ipsum malesuada, ac maximus tortor elementum. Nullam convallis malesuada ante, vitae tristique lacus. Vestibulum efficitur nibh vel lacus accumsan, quis commodo tortor pellentesque. Fusce at libero in orci auctor vulputate. Vivamus ullamcorper mi sed ultricies mollis. Nullam eget lectus consectetur, finibus quam et, mollis nunc. Nam nec diam nisi. 
+
+Phasellus sit amet ex vitae turpis venenatis egestas eget sit amet risus. Sed aliquam, ipsum ac lacinia congue, sem mi volutpat urna, eget congue nulla nulla non odio. Nullam convallis, orci vel molestie pretium, arcu nisi eleifend dui, non vestibulum nisi nisi eget risus. Maecenas in felis eu turpis elementum elementum. Duis commodo magna at nisl sollicitudin congue. Donec malesuada commodo lorem, nec vestibulum est tempor at. Suspendisse et orci ac lorem venenatis fringilla. 
+
+Donec in quam eleifend, ultrices ex vel, efficitur justo. Ut vitae odio et ante maximus consectetur. Proin in sodales justo. Sed nec libero ac velit hendrerit luctus. Fusce elementum consequat felis sed elementum. Etiam ac dui quis leo vehicula sollicitudin. Nam et gravida diam. Morbi aliquam ex sit amet nisi suscipit tempor. Integer id posuere felis. 
+
+Flag is: flag{a0a74ba2117fcf103842142130791d99} 
+
+Pellentesque tempor diam eu scelerisque elementum. Vivamus lacinia, libero eu egestas laoreet, nisl justo vulputate lacus, sed faucibus odio leo a elit. Nullam ac mi at turpis vehicula ultricies. Cras sed tellus vestibulum, lacinia justo in, ultrices magna. Sed lobortis semper lectus, at hendrerit quam rutrum id. Praesent egestas, justo eu viverra fermentum, augue ipsum egestas lorem, non condimentum ex sem non nunc. Nulla pharetra lacus ut mi auctor, sit amet consequat odio efficitur. 
