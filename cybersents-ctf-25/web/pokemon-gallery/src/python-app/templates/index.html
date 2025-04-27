@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokémon Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="/static/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>Pokémon Gallery</h1>
+      <p class="subtitle">Explore the rooms of elemental Pokémon!</p>
+    </div>
+  </header>
+
+  <main>
+    {% for room, pokemons in rooms.items() %}
+      <section class="room">
+        <h2>{{ room.title() }} Type Room</h2>
+        <div class="gallery">
+          {% for name in pokemons %}
+            <div class="card">
+              {% if uploads[room][name] %}
+                <a href="/download?resource={{ uploads[room][name][0] }}&hash={{ uploads[room][name][1] }}">
+                  <img src="/download?resource={{ uploads[room][name][0] }}&hash={{ uploads[room][name][1] }}" alt="{{ name }}" class="pokemon-img" />
+                </a>
+              {% else %}
+                <img src="/static/placeholders/{{ name }}.png" alt="{{ name }}" class="pokemon-img" />
+              {% endif %}
+              <p class="pokemon-name">{{ name.title() }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    {% endfor %}
+  </main>
+
+  <footer>
+    <div class="form-container">
+      <div class="form-box">
+        <h3>Upload Pokémon Image</h3>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <input type="file" name="file" id="file-upload" required />
+            <label for="file-upload" class="file-upload-label">Choose File</label>
+          </div>
+          <div class="form-group">
+            <input type="text" name="hash" placeholder="Enter hash key" required />
+          </div>
+          <button type="submit" class="btn">Upload</button>
+        </form>
+      </div>
+
+      <div class="form-box">
+        <h3>Download Pokémon Image</h3>
+        <form action="/download" method="get">
+          <div class="form-group">
+            <input type="text" name="resource" placeholder="Resource path" required />
+          </div>
+          <div class="form-group">
+            <input type="text" name="hash" placeholder="Enter hash key" required />
+          </div>
+          <button type="submit" class="btn">Download</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

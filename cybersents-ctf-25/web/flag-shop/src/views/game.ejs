@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to the Game</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <% if (typeof msg !== 'undefined') { %>
+        <script>alert("<%= msg %>");</script>
+      <% } %>
+      
+  <div class="centered">
+    <h2>Welcome, <%= user.username %>!</h2>
+    <p>Your current points: <%= user.points %></p>
+    <p>Remaining attempts: <%= user.attempts %></p>
+
+    <form action="/buy-points" method="POST">
+      <input type="number" name="amount" min="0" max="99" required placeholder="0-99">
+      <button type="submit">Buy Points</button>
+    </form>
+
+    <br>
+    <form action="/get-flag" method="GET">
+      <button type="submit">Get Flag</button>
+    </form>
+
+    <br>
+    <a href="/logout"><button>Logout</button></a>
+  </div>
+</body>
+</html>
